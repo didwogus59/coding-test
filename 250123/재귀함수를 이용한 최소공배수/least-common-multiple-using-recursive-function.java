@@ -1,0 +1,26 @@
+import java.util.*;
+public class Main {
+    static int[] arr;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        arr = new int[n];
+
+        for(int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(recursive(n-1, 1));
+    }
+    public static int recursive(int n, int now) {
+        if(n == -1)
+            return now;
+        if(now % arr[n] == 0)
+            return recursive(n - 1, now);
+        int mul = 1;
+        for(int i = 2; i <= 10; i++) {
+            if(now % i == 0 && arr[n] % i == 0)
+                mul *= i;
+        }
+        return recursive(n - 1, now * arr[n] / mul);
+    }
+}
