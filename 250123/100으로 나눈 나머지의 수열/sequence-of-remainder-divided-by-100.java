@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        arr = new int[n + 1];
+        arr = new int[21];
         arr[1] = 2;
         arr[2] = 4;
         System.out.println(fact(n));
