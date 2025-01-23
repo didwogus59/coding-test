@@ -17,7 +17,7 @@ public class Main {
         if(now % arr[n] == 0)
             return recursive(n - 1, now);
         int mul = 1;
-        for(int i = 2; i <= arr[n] - 1; i++) {
+        for(int i = 2; i <= arr[n] / mul; i++) {
             if(now % i == 0 && arr[n] % i == 0)
                 mul *= i;
         }
