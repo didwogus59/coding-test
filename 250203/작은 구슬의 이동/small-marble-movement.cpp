@@ -11,7 +11,7 @@ int main() {
     cin >> r >> c >> d;
     int x = r;
     int y = c;
-    int dirX[] = {-1,0,0,1};
+    int dirX[] = {1,0,0,-1};
     int dirY[] = {0,-1,1,0};
 
     int dir;
@@ -37,6 +37,7 @@ int main() {
             y -= dirY[dir];
             dir = 3 - dir;
         }
+
     }
     cout << x << " " << y;
     return 0;
