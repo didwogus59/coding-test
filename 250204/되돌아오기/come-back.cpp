@@ -34,12 +34,14 @@ int main() {
         }
         if(x == 0 && y * by <= 0 && i > 0) {
             time = by > 0 ? time + by : time -by;
+            time = bx > 0 ? time + bx : time -bx;
             check = 1;
             break;
         }
             
         if(y == 0 && x * bx <= 0 && i > 0) {
             time = bx > 0 ? time + bx : time -bx;
+            time = by > 0 ? time + by : time -by;
             check = 1;
             break;
 
