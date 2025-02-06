@@ -12,6 +12,9 @@ int main() {
             a[i] = '1';
             break;
         }
+        if(i == len - 1) {
+            a[i] = '0';
+        }
     }
     int num = 0;
     int digit = 1;
