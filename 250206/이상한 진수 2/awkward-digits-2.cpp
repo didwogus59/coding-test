@@ -7,6 +7,13 @@ string a;
 int main() {
     cin >> a;
     int len = a.length();
+    if(len == 1) {
+        if(a[0] == '1')
+            cout << 0;
+        else
+            cout << 1;
+        return 0;
+    }
     for(int i = 1; i < len; i++) {
         if(a[i] == '0') {
             a[i] = '1';
