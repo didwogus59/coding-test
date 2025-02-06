@@ -10,7 +10,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> a[i];
     }
-    int ans = 1003 * 1004;
+    int ans = 1003 * 1004 * 100;
     for(int i = 0; i < n; i++) {
         int sum = 0;
         for(int j = 1; j < n; j++) {
