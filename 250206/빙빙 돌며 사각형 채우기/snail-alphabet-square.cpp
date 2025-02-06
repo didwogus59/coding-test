@@ -32,7 +32,7 @@ int main() {
         }
         x += dirX[dir];
         y += dirY[dir];
-        if(nx < 0 || ny < 0 || nx >= n || ny >= m) {
+        if(x < 0 || y < 0 || x >= n || y >= m) {
             break;
         }
         if(arr[x][y] != 0) {
