@@ -32,10 +32,11 @@ int main() {
         }
         x += dirX[dir];
         y += dirY[dir];
-        if(arr[x][y] != 0)
-            break;
         if(x < 0 || y < 0 || x >= n || y >= n)
             break;
+        if(arr[x][y] != 0)
+            break;
+        
         cnt--;
     }
     for(int i = 0; i < n; i++) {
