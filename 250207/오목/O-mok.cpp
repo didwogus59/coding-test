@@ -8,8 +8,8 @@ bool range(int x, int y) {
         return true;
     return false;
 }
-int dirX[3] = {1,0,1};
-int dirY[3] = {0,1,1};
+int dirX[4] = {1,0,1,-1};
+int dirY[4] = {0,1,1,1};
 int main() {
     for (int i = 0; i < 19; i++)
         for (int j = 0; j < 19; j++) cin >> board[i][j];
@@ -17,7 +17,7 @@ int main() {
     for(int i = 0; i < 19; i++) {
         for(int j = 0; j < 19; j++) {
             if(board[i][j] != 0) {
-                for(int p = 0; p < 3; p++) {
+                for(int p = 0; p < 4; p++) {
                     bool chk = true;
                     for(int q = 1; q < 5; q++) {
                         int x = i + dirX[p] * q;
