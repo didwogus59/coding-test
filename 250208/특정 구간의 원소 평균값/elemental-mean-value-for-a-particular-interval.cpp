@@ -19,8 +19,8 @@ int main() {
             for(int p = i; p <= j; p++) {
                 sum += arr[p];
             }
-            int mean = sum / (j - i);
-            if(mean * (j - i) == sum) {
+            int mean = sum / (j - i + 1);
+            if(mean * (j - i + 1) == sum) {
                 for(int p = i; p <= j; p++) {
                     if(mean == arr[p]) {
                         ans++;
