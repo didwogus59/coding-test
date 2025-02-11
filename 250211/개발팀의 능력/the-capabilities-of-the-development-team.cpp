@@ -3,7 +3,7 @@
 using namespace std;
 
 int ab[5];
-int ans = 6000000;
+int ans = -1;
 int diff(int a, int b, int c) {
     int max;
     int min;
@@ -42,6 +42,8 @@ void make_arr(int* ab, int* chk, int* arr, int now) {
         int c = ab[arr[4]];
         if(a != b && b != c && c != a) {
             int d = diff(a,b,c);
+            if(ans == -1)
+                ans = 600000;
             ans = ans < d ? ans : d;
         }
     }
@@ -60,9 +62,7 @@ int main() {
     int sum = 0;
     for (int i = 0; i < 5; i++) {
         cin >> ab[i];
-        sum += ab[i];
     }
-    ans = sum;
     int* chk = new int[5];
     int* arr = new int[5];
     make_arr(ab, chk, arr, 0);
