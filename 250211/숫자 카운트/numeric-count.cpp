@@ -43,8 +43,10 @@ int main() {
                     break;
                 }
             }
-            if(chk)
+            if(chk) {
+
                 cnt++;
+            }
         }
     }
     // Write your code here!
