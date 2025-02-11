@@ -16,8 +16,8 @@ int main() {
         int t1 = (i / 10) % 10;
         int h1 = i / 100;
         bool chk = true;
-        
-        if(o1 != t1 && t1 != h1 && o1 != h1) {
+         
+        if(o1 != t1 && t1 != h1 && o1 != h1 && o1 != 0 && t1 != 0) {
             for(int j = 0; j < n; j++) {
                 int p1 = 0;
                 int p2 = 0;
