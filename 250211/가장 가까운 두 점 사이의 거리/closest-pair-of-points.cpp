@@ -11,7 +11,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> x[i] >> y[i];
     }
-    int ans = 2 * 1000 * 1000 + 1;
+    int ans = 2 * 1000 * 10000 + 1;
     for(int i = 0; i < n - i; i++) {
         for(int j = i + 1; j < n; j++) {
             int dx = x[i] - x[j];
