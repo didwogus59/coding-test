@@ -21,7 +21,7 @@ int main() {
         cin >> sp >> sick_t[i];
         sick_p[i] = sp - 1;
     }
-    int ans = 0;
+    int ans = S;
     //i번쨰 치즈가 상했다고 가정하면 아픈 사람은 무조건 아프기 전에 i번째 치즈를 먹은 적이 있어야 함 
     for(int i = 0; i < M; i++) {
         bool chk = false;;
