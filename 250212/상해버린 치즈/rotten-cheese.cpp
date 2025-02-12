@@ -48,7 +48,7 @@ int main() {
                 }
             }
             ans = ans > drug ? ans : drug;
-            delete cnt;
+            delete[] cnt;
         }
     }
     cout << ans;
