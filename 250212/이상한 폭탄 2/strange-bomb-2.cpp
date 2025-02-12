@@ -11,7 +11,7 @@ int main() {
     for (int i = 0; i < N; i++) {
         cin >> num[i];
     }
-    int ans = 0;
+    int ans = -1;
     for(int i = 0; i < N; i++) {
         for(int j = 1; j <= K; j++) {
             if(i - j >= 0) {
