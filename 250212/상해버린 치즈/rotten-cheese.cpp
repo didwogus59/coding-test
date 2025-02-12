@@ -33,6 +33,8 @@ int main() {
                     break;
                 }
             }
+            if(!chk)
+                break;
         }
         if(chk) {
             int* cnt = new int[N];
