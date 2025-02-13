@@ -1,23 +1,22 @@
 #include <iostream>
-
+#include <vector>
 using namespace std;
 
 int T, a, b;
-int* alp1;
-int* alp2;
+
 int main() {
     cin >> T >> a >> b;
-    alp1 = new int[2001]{};
-    alp2 = new int[2001]{};
+    vector<int> alp1;
+    vector<int> alp2;
     for (int i = 0; i < T; i++) {
         char tmp;
         int pt;
         cin >> tmp >> pt;
         if(tmp == 'S') {
-            alp1[pt] = 1;
+            alp1.push_back(pt);
         }
         else {
-            alp2[pt] = 1;
+            alp2.push_back(pt);
         }
     }
 
@@ -25,18 +24,20 @@ int main() {
     for(int i = a; i <= b; i++) {
         int dis1 = b;
         int dis2 = b;
-        for(int j = a; j <= b; j++) {
-            
-            int dis = i - j;
-            if(i < j) {
+        for(int pt : alp1) {
+            int dis = i - pt;
+            if(dis < 0) {
                 dis *= -1;
             }
-            if(alp1[j] == 1) {
-                dis1 = dis1 < dis ? dis1 : dis;
+            dis1 = dis1 < dis ? dis1 : dis;
+        }
+        
+        for(int pt : alp2) {
+            int dis = i - pt;
+            if(dis < 0) {
+                dis *= -1;
             }
-            if(alp2[j] == 1) {
-                dis2 = dis2 < dis ? dis2 : dis;
-            }
+            dis2 = dis2 < dis ? dis2 : dis;
         }
         if(dis1 <= dis2) {
             cnt++;
