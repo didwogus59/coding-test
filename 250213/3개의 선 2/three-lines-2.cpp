@@ -11,10 +11,10 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> x[i] >> y[i];
     }
-    for(int i = 0; i < 20; i++) {
+    for(int i = 0; i <= 20; i++) {
         
-        for(int j = 0; j < 20; j++) {
-            for(int p = 0; p < 20; p++) {
+        for(int j = 0; j <= 22; j++) {
+            for(int p = 0; p <= 22; p++) {
                 int* arr = new int[n]{};
                 for(int q = 0; q < n; q++) {
                     if(i < 11) {
@@ -23,17 +23,17 @@ int main() {
                         }
                     }
                     if(i > 10) {
-                        if(y[q] == i) {
+                        if(y[q] == i - 11) {
                             arr[q] = 1;
                         }
                     }
                     if(j < 11) {
-                        if(x[q] == j - 10) {
+                        if(x[q] == j) {
                             arr[q] = 1;
                         }
                     }
                     if(j > 10) {
-                        if(y[q] == j) {
+                        if(y[q] == j - 11) {
                             arr[q] = 1;
                         }
                     }
@@ -43,7 +43,7 @@ int main() {
                         }
                     }
                     if(p > 10) {
-                        if(y[q] == p- 10) {
+                        if(y[q] == p- 11) {
                             arr[q] = 1;
                         }
                     }
