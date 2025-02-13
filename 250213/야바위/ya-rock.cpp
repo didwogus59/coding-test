@@ -18,7 +18,7 @@ int main() {
     int max = 0;
     for(int i = 1; i < 4; i++) {
         int cnt = 0;
-        int* coin = new int[3]{};
+        int* coin = new int[4]{};
         coin[i] = 1;
         for(int j = 0; j < N; j++) {
             int tmp = coin[a[j]];
