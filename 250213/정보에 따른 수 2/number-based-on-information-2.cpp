@@ -7,8 +7,8 @@ int* alp1;
 int* alp2;
 int main() {
     cin >> T >> a >> b;
-    alp1 = new int[1001]{};
-    alp2 = new int[1001]{};
+    alp1 = new int[2001]{};
+    alp2 = new int[2001]{};
     for (int i = 0; i < T; i++) {
         char tmp;
         int pt;
