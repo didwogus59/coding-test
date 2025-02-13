@@ -23,11 +23,12 @@ int main() {
                         bef = arr[p];
                     }
                     else {
-                        int tmp = arr[p] - bef;
-                        if(tmp < 0) {
-                            tmp *= -1;
+                        int diff = arr[p] - bef;
+                        if(diff < 0) {
+                            diff *= -1;
                         }
-                        sum += tmp;
+                        sum += diff;
+                        bef = arr[p];
                     }
                 }
             }
