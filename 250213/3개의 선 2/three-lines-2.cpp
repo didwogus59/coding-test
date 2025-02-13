@@ -17,7 +17,7 @@ int main() {
             for(int p = 0; p < 20; p++) {
                 for(int q = 0; q < n; q++) {
                     if(i < 11) {
-                        if(x[q] == i) {
+                        if(x[q] == i- 10) {
                             arr[q] = 1;
                         }
                     }
@@ -27,7 +27,7 @@ int main() {
                         }
                     }
                     if(j < 11) {
-                        if(x[q] == j) {
+                        if(x[q] == j - 10) {
                             arr[q] = 1;
                         }
                     }
@@ -37,7 +37,7 @@ int main() {
                         }
                     }
                     if(p < 11) {
-                        if(x[q] == p) {
+                        if(x[q] == p- 10) {
                             arr[q] = 1;
                         }
                     }
