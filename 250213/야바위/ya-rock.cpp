@@ -31,6 +31,6 @@ int main() {
             max = cnt;
         }
     }
-    cout << ans;
+    cout << max;
     return 0;
 }
