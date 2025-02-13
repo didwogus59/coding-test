@@ -13,7 +13,7 @@ int main() {
         int now = i / 10;
         int n1 = i % 10;
         int n2 = -1;
-        int c1 = 0;
+        int c1 = 1;
         int c2 = 0;
         bool chk = true;
         while(now > 0) {
@@ -23,6 +23,7 @@ int main() {
             else {
                 if(n2 == -1) {
                     n2 = now % 10;
+                    c2++;
                 }
                 else if(n2 == now % 10) {
                     c2++;
@@ -35,7 +36,9 @@ int main() {
             now /= 10;
         }
         if(chk) {
-            if(c1 == 1 || c2 == 1) {
+
+            if((c1 == 1 && c2 >= 1) || (c2 == 1 && c1 >= 1)) {
+                // cout << i << '\n';
                 cnt++;
             }
         }
