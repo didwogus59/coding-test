@@ -12,9 +12,10 @@ int main() {
         cin >> x[i] >> y[i];
     }
     for(int i = 0; i < 20; i++) {
-        int* arr = new int[n]{};
+        
         for(int j = 0; j < 20; j++) {
             for(int p = 0; p < 20; p++) {
+                int* arr = new int[n]{};
                 for(int q = 0; q < n; q++) {
                     if(i < 11) {
                         if(x[q] == i) {
