@@ -7,7 +7,7 @@ int X, Y;
 int main() {
     cin >> X >> Y;
     int ans = 0;
-    for(int i = X; i < Y; i++) {
+    for(int i = X; i <= Y; i++) {
         int now = i;
         int sum = 0;
         while(now > 0) {
