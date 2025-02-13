@@ -3,13 +3,12 @@
 using namespace std;
 
 int T, a, b;
-int x[100];
 int* alp1;
 int* alp2;
 int main() {
     cin >> T >> a >> b;
-    alp1 = new int[101]{};
-    alp2 = new int[101]{};
+    alp1 = new int[1001]{};
+    alp2 = new int[1001]{};
     for (int i = 0; i < T; i++) {
         char tmp;
         int pt;
@@ -41,7 +40,6 @@ int main() {
         }
         if(dis1 <= dis2) {
             cnt++;
-
         }
             
     }
