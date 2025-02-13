@@ -23,7 +23,7 @@ int main() {
                     }
                     if(i > 10) {
                         if(y[q] == i) {
-                            arr[q] - 1;
+                            arr[q] = 1;
                         }
                     }
                     if(j < 11) {
@@ -33,7 +33,7 @@ int main() {
                     }
                     if(j > 10) {
                         if(y[q] == j) {
-                            arr[q] - 1;
+                            arr[q] = 1;
                         }
                     }
                     if(p < 11) {
@@ -43,7 +43,7 @@ int main() {
                     }
                     if(p > 10) {
                         if(y[q] == p- 10) {
-                            arr[q] - 1;
+                            arr[q] = 1;
                         }
                     }
                 }
