@@ -13,12 +13,14 @@ int main() {
     }
     int ans = 0;
     for(int i = 1; i <= 100; i++) {
+        int cnt = 0;
         for(int p = 0; p < n - 1; p++) {
             for(int q = p + 1; q < n; q++) {
                 if(i - a[p] == a[q] - i)
-                    ans++;
+                    cnt++;
             }
         }
+        ans = ans > cnt ? ans : cnt;
     }
     // Write your code here!
     cout << ans;
