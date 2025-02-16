@@ -31,8 +31,10 @@ int main() {
                     dis = dis < j ? dis : j;
                 }
             }
-            if(dis != len + 1)
+            if(dis != len + 1) {
                 ans = ans > dis ? ans : dis;
+                // cout << i << " " << dis << '\n';
+            }
             arr[i] = 0;
         }
     }
