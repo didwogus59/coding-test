@@ -7,24 +7,20 @@ int arr[100];
 
 int main() {
     cin >> n >> m;
-    for (int i = 0; i < n; i++) {
+    for (int i = 1; i <= n; i++) {
         cin >> arr[i];
     }
 
     // Write your code here!
     int ans = 0;
-    for(int i = 0; i < n; i++) {
+    for(int i = 1; i <= n; i++) {
         int sum = arr[i];
-        int now = i;
-        int bef = arr[i] - 1;
+        int bef = arr[i];
         for(int j = 1; j < m; j++) {
             
-            // cout << now << " " << arr[now] << '\n';
-            sum += arr[(now + bef) % n];
-            now = (now + bef) % n;
-            bef = arr[now] - 1;
+            sum += arr[bef];
+            bef = arr[bef];
         }
-        // cout << sum <<'\n';
         ans = ans > sum ? ans : sum;
     }
     cout << ans;
