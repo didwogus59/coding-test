@@ -10,7 +10,7 @@ int main() {
     cin >> N;
     cin >> seat;
     int len = N;
-    int* arr = new int[len];
+    int* arr = new int[len]{};
     for(int i = 0; i < len; i++) {
         if(seat[i] == '0') {
             arr[i] = 0;
@@ -18,7 +18,7 @@ int main() {
         else
             arr[i] = 1;
     }
-    int ans = -1;
+    int ans = 0;
     for(int i = 0; i < len; i++) {
         if(arr[i] == 0) {
             arr[i] = 1;
