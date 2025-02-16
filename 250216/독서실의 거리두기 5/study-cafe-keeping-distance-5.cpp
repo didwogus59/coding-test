@@ -18,7 +18,7 @@ int main() {
         else
             arr[i] = 1;
     }
-    int ans = 0;
+    int ans = -1;
     for(int i = 0; i < len; i++) {
         if(arr[i] == 0) {
             arr[i] = 1;
