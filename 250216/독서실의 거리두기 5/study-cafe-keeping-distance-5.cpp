@@ -31,7 +31,8 @@ int main() {
                     dis = dis < j ? dis : j;
                 }
             }
-            ans = ans > dis ? ans : dis;
+            if(dis != len + 1)
+                ans = ans > dis ? ans : dis;
             arr[i] = 0;
         }
     }
