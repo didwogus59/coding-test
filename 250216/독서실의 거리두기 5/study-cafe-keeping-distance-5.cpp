@@ -23,18 +23,23 @@ int main() {
         if(arr[i] == 0) {
             arr[i] = 1;
             int dis = len + 1;
-            for(int j = 1; j < len; j++) {
-                if(i + j < len && arr[i + j] == 1) {
-                    dis = dis < j ? dis : j;
-                }
-                if(i - j >= 0 && arr[i - j] == 1) {
-                    dis = dis < j ? dis : j;
+            for(int p = 0; p < len; p++) {
+                if(arr[p] == 1) {
+                    for(int q = 0; q < len; q++) {
+                        if(p != q) {
+                            if(arr[q] == 1) {
+                                if(p > q) {
+                                    dis = dis < p - q ? dis  : p - q;
+                                }
+                                else
+                                    dis = dis < q - p ? dis : q - p;
+                            }
+                        }
+                    }
                 }
             }
-            if(dis != len + 1) {
-                ans = ans > dis ? ans : dis;
-                // cout << i << " " << dis << '\n';
-            }
+            // cout << i << " " << dis << '\n';
+            ans = ans > dis ? ans : dis;
             arr[i] = 0;
         }
     }
