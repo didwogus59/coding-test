@@ -12,7 +12,7 @@ int main() {
         cin >> a[i] >> b[i];
     }
 
-    for(int i = 1; i <= 10; i++) {
+    for(int i = 1; i <= 10000; i++) {
         int now = i;
         bool chk = true;
         for(int j = 0; j < n; j++) {
