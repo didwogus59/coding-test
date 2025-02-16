@@ -9,7 +9,7 @@ string seat;
 int main() {
     cin >> N;
     cin >> seat;
-    int len = seat.length();
+    int len = N;
     int* arr = new int[len];
     for(int i = 0; i < len; i++) {
         if(seat[i] == '0') {
