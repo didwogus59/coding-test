@@ -27,9 +27,10 @@ int main() {
     }
 
     for(int i = 1; i <= 100; i++) {
-        jump(0,i);
+        int max = i > arr[0] ? i : arr[0];
+        jump(0,max);
         if(chk) {
-            cout << i;
+            cout << max;
             return 0;
         }
     }
