@@ -1,34 +1,39 @@
-#include<iostream>
-#include<queue>
+#include <iostream>
+
 using namespace std;
-int ans;
+
 int n, k;
-int* arr;
-void jump(int max, int now) {
-    if(now != n) {
-        for(int i = now; i < n && i - now < k; i++) {
-            if(arr[i] > max) {
-                jump(arr[i], i + 1);
-            }
-            else {
-                jump(max, i + 1);
-            }
-        }
+int arr[100];
+bool chk = false;
+void jump(int now, int min) {
+    if(now == min) {
+        chk = true;
     }
     else {
-        ans = ans < max ? ans : max;
+        int max = -1;
+        for(int i = 1; i <= k && i + now < n; i++) {
+            if(arr[now + i] <= min) {
+                max = now + i;
+            }
+        }
+        if(max != - 1)
+            jump(max, min);
     }
 }
 int main() {
     cin >> n >> k;
-
-    arr = new int[n];
-    for(int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
-    ans = 200;
-    jump(arr[0], 0);
 
-    cout << ans;
+    for(int i = 1; i <= 100; i++) {
+        jump(0,i);
+        if(chk) {
+            cout << i;
+            return 0;
+        }
+    }
+    // Write your code here!
+
     return 0;
 }
