@@ -26,8 +26,8 @@ int main() {
     for(int i = 0; i < n; i++) {
         cin >> arr[i];
     }
-    ans = arr[0];
-    jump(0, 0);
+    ans = 200;
+    jump(arr[0], 0);
 
     cout << ans;
     return 0;
