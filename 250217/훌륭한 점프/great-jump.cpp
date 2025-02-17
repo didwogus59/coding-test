@@ -1,7 +1,7 @@
 #include<iostream>
 #include<queue>
 using namespace std;
-int ans = 200;
+int ans;
 int n, k;
 int* arr;
 void jump(int max, int now) {
@@ -26,7 +26,7 @@ int main() {
     for(int i = 0; i < n; i++) {
         cin >> arr[i];
     }
-
+    ans = arr[0];
     jump(0, 0);
 
     cout << ans;
