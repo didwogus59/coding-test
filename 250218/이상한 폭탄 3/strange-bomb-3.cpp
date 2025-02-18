@@ -14,7 +14,7 @@ int main() {
     int max = 0;
     int num = 0;
     for(int i = 0; i < n; i++) {
-        for(int j = 1; j <= bomb[i]; j++) {
+        for(int j = 1; j <= k; j++) {
             if(i + j < n) {
                 if(bomb[i + j] == bomb[i]) {
                     boom[i + j] = 1;
@@ -36,22 +36,22 @@ int main() {
                 if(bomb[i] == bomb[j]) {
                     if(boom[j] == 1) {
                         cnt++;
+                        boom[j] = 0;
                     }
                 }
             }
-            if(cnt > max) {
-                max = cnt;
-                num = bomb[i];
-            }
-            else if(cnt == max) {
-                if(bomb[i] > num)
+            if(cnt > 0) {
+                if(cnt > max) {
+                    max = cnt;
                     num = bomb[i];
+                }
+                else if(cnt == max) {
+                    if(bomb[i] > num)
+                        num = bomb[i];
+                }
             }
         }
     }
-    if(max != 0)
         cout << num;
-    else
-        cout << 0;
     return 0;
 }
