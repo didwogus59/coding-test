@@ -3,39 +3,41 @@ using namespace std;
 
 int n, m;
 int* arr;
-int chk[101][101];
-int ans = 10100;
-void div(int now, int cnt, int max) {
-    if(now < n && cnt < m - 1) {
-        int sum = 0;
-        for(int i = now; i < n; i++) {
-            sum += arr[i];
-            if(sum >= ans)
-                break;
-            max = max > sum ? max : sum;
-            if(chk[i][cnt] == 0 || chk[i][cnt] < max) {
-                chk[i][cnt] = max;    
-                div(i + 1, cnt + 1, max);
-            }
-        }
-    }
-    else {
-        int sum = 0;
-        for(int i = now; i < n; i++) {
-            sum += arr[i];
-        }
-        max = max > sum ? max : sum;
-        ans = ans < max ? ans : max;
-        // cout << ans << '\n';
-    }
-}
+
 int main() {
     cin >> n >> m;
     arr = new int[n];
     for(int i = 0; i < n; i++) {
         cin >> arr[i];
     }
-    div(0,0,0);
-    cout << ans;
-    return 0;
+    int sum[101];
+    sum[0] = arr[0];
+    for(int i = 1; i < n; i++) {
+        sum[i] = arr[i] + sum[i-1];
+    }
+
+    for(int i = sum[0]; i < 10002; i++) {
+        int bef = 0;
+        int cnt = 0;
+        for(int j = 0; j < n; j++) {
+            if(cnt == m)
+                 break;
+            if(sum[j] - bef > i) {
+                if(j == 0)
+                    break;
+                    
+                // cout <<j << " " << sum[j - 1] << " " << bef << '\n';
+                bef = sum[j - 1];
+                j--;
+                cnt++;
+            }
+            
+        }
+        if(sum[n - 1] - bef <= i) {
+            if(cnt == m - 1) {
+                cout << i;
+                return 0;
+            }
+        }
+    }
 }
