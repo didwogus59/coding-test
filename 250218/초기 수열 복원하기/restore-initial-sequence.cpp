@@ -13,7 +13,7 @@ int main() {
     }
 
     for(int i = 1; i <= n; i++) {
-        int* arr = new int[n + 1]{};
+        int* arr = new int[n]{};
         int* chk = new int[n + 1]{};
         bool ans = true;
         arr[0] = i;
