@@ -3,7 +3,7 @@ using namespace std;
 
 int n, m;
 int* arr;
-int ans = 101;
+int ans = 10100;
 void div(int now, int cnt, int max) {
     if(now < n && cnt < m - 1) {
         int sum = 0;
