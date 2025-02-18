@@ -20,20 +20,20 @@ int main() {
         chk[i] = 1;
         for(int j = 1; j < n; j++) {
             int now = ad[j - 1] - arr[j - 1];
-            if(chk[now] != 0) {
-                ans = false;
-                break;
+            if(now >= 1 && now <= n) {
+                if(chk[now] == 0) {        
+                    chk[now] = 1;
+                    arr[j] = now;
+                    continue;
+                }
             }
-            else {
-                chk[now] = 1;
-                arr[j] = now;
-            }
+            ans = false;
+            break;
         }
         if(ans) {
-            for(int i = 0; i < n; i++) {
-                cout << arr[i] << " ";
+            for(int j = 0; j < n; j++) {
+                cout << arr[j] << " ";
             }
-            cout <<'\n';
             return 0;
         }
     }
