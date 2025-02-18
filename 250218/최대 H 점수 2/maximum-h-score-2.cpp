@@ -18,11 +18,11 @@ int main() {
         int cnt = 0;
         for(int j = n - 1; j >= 0; j--) {
             if(a[j] < i) {
-                plus -= i - a[j];
-                if(plus >= 0) {
-                    cnt++;
-                }
-                else
+                plus--;
+                if(plus >= 0)
+                    if(a[j] + 1 >= i)
+                        cnt++;
+                if(plus == 0)
                     break;
             }
             else {
