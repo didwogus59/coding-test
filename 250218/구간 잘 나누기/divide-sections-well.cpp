@@ -16,7 +16,7 @@ int main() {
         sum[i] = arr[i] + sum[i-1];
     }
 
-    for(int i = sum[0]; i < 10002; i++) {
+    for(int i = sum[0]; i <= sum[n - 1]; i++) {
         int bef = 0;
         int cnt = 0;
         for(int j = 0; j < n; j++) {
@@ -29,6 +29,8 @@ int main() {
                 bef = sum[j - 1];
                 j--;
                 cnt++;
+                if(cnt == m - 1)
+                    break;
             }
             
         }
