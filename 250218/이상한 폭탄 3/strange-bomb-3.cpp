@@ -49,6 +49,9 @@ int main() {
             }
         }
     }
-    cout << num;
+    if(max != 0)
+        cout << num;
+    else
+        cout << 0
     return 0;
 }
