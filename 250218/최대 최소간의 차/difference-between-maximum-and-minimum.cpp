@@ -22,7 +22,7 @@ int main() {
             }
             else {
                 if(i - arr[j] > k) {
-                    sum += i - arr[i] - k;
+                    sum += i - arr[j] - k;
                 }
             }
         }
