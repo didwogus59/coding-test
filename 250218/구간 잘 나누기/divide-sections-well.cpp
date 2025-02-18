@@ -20,13 +20,12 @@ int main() {
         int bef = 0;
         int cnt = 0;
         for(int j = 0; j < n; j++) {
-            if(cnt == m)
-                 break;
             if(sum[j] - bef > i) {
                 if(j == 0)
                     break;
-                    
                 // cout <<j << " " << sum[j - 1] << " " << bef << '\n';
+                if(bef == sum[j - 1])
+                    break;
                 bef = sum[j - 1];
                 j--;
                 cnt++;
