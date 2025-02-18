@@ -3,6 +3,7 @@ using namespace std;
 
 int n, m;
 int* arr;
+int chk[101][101];
 int ans = 10100;
 void div(int now, int cnt, int max) {
     if(now < n && cnt < m - 1) {
@@ -12,7 +13,10 @@ void div(int now, int cnt, int max) {
             if(sum >= ans)
                 break;
             max = max > sum ? max : sum;
-            div(i + 1, cnt + 1, max);
+            if(chk[i][cnt] == 0 || chk[i][cnt] < max) {
+                chk[i][cnt] = max;    
+                div(i + 1, cnt + 1, max);
+            }
         }
     }
     else {
@@ -22,6 +26,7 @@ void div(int now, int cnt, int max) {
         }
         max = max > sum ? max : sum;
         ans = ans < max ? ans : max;
+        // cout << ans << '\n';
     }
 }
 int main() {
