@@ -10,7 +10,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> x1[i] >> x2[i];
     }
-    for(int i = 1; i <= 4; i++) {
+    for(int i = 1; i <= 100; i++) {
         for(int j = 0; j < n; j++) {
             bool chk = true;
             for(int p = 0; p < n; p++) {
