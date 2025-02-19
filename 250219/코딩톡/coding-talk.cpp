@@ -14,8 +14,15 @@ int main() {
     }
 
     int user[27] = {};
-
-    for(int i = p -1; i < m; i++) {
+    int fst = p - 1;
+    for(int i = p - 1; i >= 0; i--) {
+        if(u[i] == u[p-1]) {
+            fst = i;
+        }
+        else 
+            break;
+    } 
+    for(int i = fst; i < m; i++) {
         user[int(c[i] - 'A')] = 1;
     }
     // for(int i = 0; i < n; i++) {
