@@ -8,10 +8,10 @@ int main() {
     int a,b,x,y;
     cin >> a >> b >> x >> y;
 
-    int min = absDis(x,y);
+    int min = absDis(a,b);
 
-    int telA = absDis(x,a) + absDis(b,y);
-    int telB = absDis(x,b) + absDis(a,y);
+    int telA = absDis(a,x) + absDis(y,b);
+    int telB = absDis(a,y) + absDis(x,b);
     min = min < telA ? min : telA;
     min = min < telB ? min : telB;
     cout << min;
