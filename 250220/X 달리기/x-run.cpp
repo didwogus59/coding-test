@@ -6,7 +6,7 @@ int main() {
     int n;
     cin >> n;
     int ans = n*n;
-    int down[1000];
+    int down[10000];
     for(int i = 1; i <= n / 2; i++) {
         int cnt = 0;
         int spd = 1;
