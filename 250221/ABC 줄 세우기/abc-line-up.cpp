@@ -36,24 +36,6 @@ int main() {
         cnt += i - p;
     }
     ans = cnt;
-    cnt = 0;
-    for(int i = n - 1; i >= 0; i--) {
-        int min = 10000;
-        int p = -1;
-        for(int j = 0; j <= i; j++) {
-            if(arrM[j] < min) {
-                min = arrM[j];
-                p = j;
-            }
-        }
-        for(int j = p; j < i; j++) {
-            int tmp = arrM[j];
-            arrM[j] = arrM[j+1];
-            arrM[j+1] = tmp;
-        }
-        cnt += i - p;
-    }
-    ans = ans < cnt ? ans : cnt;
     cout << ans;
     return 0;
 }
