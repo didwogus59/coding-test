@@ -20,19 +20,23 @@ int main() {
     }
     int min2 = 200;
     int p2 = -2;
+    int cnt = 0;
     for(int i = 0; i < n; i++) {
         if(arr[i] != min1) {
             if(arr[i] < min2) {
                 min2 = arr[i];
                 p2 = i;
+                cnt = 0;
             }
             else if(arr[i] == min2) {
-                cout << -1;
-                return 0;
+                cnt++;
             }
         }
     }
+    if(cnt > 0)
+        cout << -1;
     // cout << p1 << " " << min1 << '\n' << min2 << " ";
-    cout << p2 + 1;
+    else
+        cout << p2 + 1;
     return 0;
 }
