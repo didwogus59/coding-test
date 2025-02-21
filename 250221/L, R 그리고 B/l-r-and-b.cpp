@@ -28,15 +28,22 @@ int main() {
             
         }
     }
+    int d;
     if(xl == xb) {
-        cout << dis(yl, yb) + 2;
+        d = dis(yl, yb);
+        if(xr == xl)
+            d += 2;
+       
     }
     else if(yl == yb) {
-        cout << dis(xl, xb) + 2;
+        d = dis(xl, xb);
+        if(yr == yl)
+            d += 2;
     }
     else {
-        cout << dis(xl, xb) + dis(yl, yb) -1;
+        d = dis(xl, xb) + dis(yl, yb) -1;
     }
+     cout << d;
     // Write your code here!
 
     return 0;
