@@ -42,14 +42,18 @@ int main() {
     int d;
     if(xl == xb) {
         d = dis(yl, yb);
-        if(xr == xl && bet(xl,xb,xr))
-            d += 2;
+        if(xr == xl && bet(yl,yb,yr)) {
+            d += 1;
+            // cout << "1\n";
+        }
        
     }
     else if(yl == yb) {
         d = dis(xl, xb);
-        if(yr == yl && bet(yl, yb, yr))
-            d += 2;
+        if(yr == yl && bet(xl, xb, xr)) {
+            d += 1;
+            // cout << "2\n";
+        }
     }
     else {
         d = dis(xl, xb) + dis(yl, yb) -1;
