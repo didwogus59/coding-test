@@ -8,6 +8,17 @@ int dis(int a, int b) {
     int dis = a > b ? a - b : b - a;
     return dis;
 }
+
+bool bet(int a, int b, int c) {
+    if(a > b) {
+        int tmp = a;
+        a = b;
+        b = tmp;
+    }
+    if(a < c && c < b)
+        return true;
+    return false;
+}
 int main() {
     int xl, yl, xr,yr, xb, yb;
     for (int i = 0; i < 10; i++) {
@@ -31,13 +42,13 @@ int main() {
     int d;
     if(xl == xb) {
         d = dis(yl, yb);
-        if(xr == xl)
+        if(xr == xl && bet(xl,xb,xr))
             d += 2;
        
     }
     else if(yl == yb) {
         d = dis(xl, xb);
-        if(yr == yl)
+        if(yr == yl && bet(yl, yb, yr))
             d += 2;
     }
     else {
