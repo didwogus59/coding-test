@@ -12,8 +12,26 @@ int main() {
     }
     int ans = 0;
     while(true) {
-        int now = arr[0];
         bool chk = true;
+        int bef = arr[0];
+        for(int i = 1; i < n; i++) {
+            if(arr[i] < bef) {
+                chk = false;
+            } 
+            bef = arr[i];
+        }
+        // for(int i = 0; i < n; i++) {
+        //     cout << arr[i] << " ";
+        // }
+        // cout << '\n';
+        if(chk) {
+            break;
+        }
+        if(ans > n*n)
+            break;
+
+        int now = arr[0];
+        chk = true;
         for(int i = 1; i < n; i++) {
             bool order = true;
             int bef = arr[i];
@@ -27,6 +45,7 @@ int main() {
                 }
             }
             if(order) {
+                // cout << i << '\n';
                 int bet = i - 1;
                 for(int j = i; j < n; j++) {
                     if(arr[j] < now) {
@@ -40,22 +59,7 @@ int main() {
                 break;
             }
         }
-        
         ans++;
-        chk = true;
-        int bef = arr[0];
-        for(int i = 1; i < n; i++) {
-            if(arr[i] < bef) {
-                chk = false;
-            } 
-            bef = arr[i];
-        }
-
-        if(chk) {
-            break;
-        }
-        if(ans > n*n)
-            break;
     }
     cout << ans;
     delete[] arr;
