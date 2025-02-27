@@ -20,7 +20,8 @@ int main() {
         char cmd;
         cin >> cmd;
         if (cmd == 'D') {
-            it = lst.erase(it);
+            if(it != lst.end())
+                it = lst.erase(it);
         }
         if(cmd == 'L') {
             if(it != lst.begin()) {
