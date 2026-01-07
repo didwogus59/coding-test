@@ -24,9 +24,7 @@ public class Main {
             arr[len - 1] = arr[0];
             arr[0] = tmp;
             len--;
-            for(int i = len / 2 + 1; i >= 0; i--) {
-                heap(arr, i, len - 1);
-            }
+            heap(arr, 0, len - 1);
         }
     }
 
