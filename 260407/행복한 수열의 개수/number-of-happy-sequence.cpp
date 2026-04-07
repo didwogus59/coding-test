@@ -41,6 +41,13 @@ int main() {
                 chkC = 1;
             }
         }
+        
+        if(cntR >= m) {
+            chkR = 1;
+        }
+        if(cntC >= m) {
+            chkC = 1;
+        }
         sum += (chkR + chkC);
     }
     cout << sum;
