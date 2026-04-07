@@ -9,7 +9,9 @@ int main() {
     for(int i = 0; i < n; i++) {
         arr[i] = new int[n];
         for(int j = 0; j < n; j++) {
-            cin >> arr[i][j]; 
+            int tmp;
+            cin >> tmp;
+            arr[i][j] = tmp; 
         }
     }
     int sum = 0;
@@ -39,7 +41,7 @@ int main() {
                 chkC = 1;
             }
         }
-        sum = sum + chkR + chkC;
+        sum += (chkR + chkC);
     }
     cout << sum;
     return 0;
