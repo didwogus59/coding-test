@@ -24,7 +24,7 @@ int main() {
         }
     }
     int max = 1;
-    for (int i = 2; i < 30; i++) {
+    for (int i = 2; i <= 20; i++) {
         if ((i * i) + ((i - 1) * (i - 1)) <= cnt * m) {
             max = i;
         }
@@ -54,26 +54,24 @@ int main() {
             int gold = 0;
             if (arr[i][j] == 1) gold++;
 
-            for (int r = 2; r <= max; r++) {
-                for (int l = 1; l < r; l++) {
-                    for (int x = 0; x < n; x++) {
-                        for (int y = 0; y < n; y++) {
-                            if (tmp[x][y] == l) {
-                                for (int mv = 0; mv < 4; mv++) {
+            for (int r = 1; r <= max; r++) {
+                for (int x = 0; x < n; x++) {
+                    for (int y = 0; y < n; y++) {
+                        if (tmp[x][y] == r) {
+                            for (int mv = 0; mv < 4; mv++) {
                                     
-                                    if (inRange(x + mx[mv], y + my[mv], n)) {
-                                        if (tmp[x + mx[mv]][y + my[mv]] == 0) {
-                                            tmp[x + mx[mv]][y + my[mv]] = l + 1;
-                                            gold += arr[x + mx[mv]][y + my[mv]];
-                                        }
+                                if (inRange(x + mx[mv], y + my[mv], n)) {
+                                    if (tmp[x + mx[mv]][y + my[mv]] == 0) {
+                                        tmp[x + mx[mv]][y + my[mv]] = r + 1;
+                                        gold += arr[x + mx[mv]][y + my[mv]];
                                     }
                                 }
                             }
                         }
                     }
-                    if (gold > ans && gold * m >= (l * l) + ((l + 1) * (l + 1))) {
-                        ans = gold;
-                    }
+                }
+                if (gold > ans && gold * m >= (r * r) + ((r + 1) * (r + 1))) {
+                    ans = gold;
                 }
             }
         }
