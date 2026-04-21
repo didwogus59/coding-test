@@ -24,7 +24,7 @@ int main() {
         }
     }
     int max = 1;
-    for (int i = 2; i < 10; i++) {
+    for (int i = 2; i < 30; i++) {
         if ((i * i) + ((i - 1) * (i - 1)) <= cnt * m) {
             max = i;
         }
