@@ -5,7 +5,7 @@ int cal(int x1, int x2, int y1, int y2, int** arr) {
     for(int x = x1; x <= x2; x++) {
         for(int y = y1; y <= y2; y++) {
             if(arr[x][y] < 0)
-                return 0;
+                return -1;
         }
     }
     return (x2 - x1 + 1) * (y2 - y1 + 1);
@@ -22,7 +22,7 @@ int main() {
             cin >> arr[i][j];
         }
     }
-    int ans = 0;
+    int ans = -1;
     for(int x1 = 0; x1 < h; x1++) {
         for(int x2 = x1; x2 < h; x2++) {
             for(int y1 = 0; y1 < w; y1++) {
