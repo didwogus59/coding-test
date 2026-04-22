@@ -17,7 +17,7 @@ int main() {
 
     int** arr = new int*[h];
     for(int i =  0; i < h; i++) {
-        arr[i] = new int[i];
+        arr[i] = new int[w];
         for(int j = 0; j < w; j++) {
             cin >> arr[i][j];
         }
