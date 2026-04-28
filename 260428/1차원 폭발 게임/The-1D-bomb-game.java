@@ -1,22 +1,21 @@
 import java.util.*;
 public class Main {
-    static int[] mx = {0, 1, 0, -1};
-    static int[] my = {1, 0, -1, 0};
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int m = sc.nextInt();
-        List<Integer> list = new LinkedList<>();
+        LinkedList<Integer> list = new LinkedList<>();
         for(int i = 0; i < n; i++) {
             int tmp = sc.nextInt();
             list.add(tmp);
         }
         boolean chk = true;
-        while(chk && list.size() > 0) {
+        while(chk && !list.isEmpty()) {
             chk = false;
             int idx = 0;
-            int fst = 0;
-            int bef = list.get(0);
+            int fst = idx;
+            int bef = list.getFirst();
             int len = 0;
             for(int i : list) {
                 if(i == bef) {
@@ -55,5 +54,10 @@ public class Main {
 1
 2
 2
+1
+
+3 2
+1
+1
 1
 * */
