@@ -11,7 +11,7 @@ public class Main {
         for(int i = 0; i < len; i++) {
             arr[i] = str.charAt(i);
         }
-        int ans = len;
+        int ans = len * 2;
         for(int i = 0; i < len; i++) {
             int cnt = 1;
             int sum = 0;
@@ -23,6 +23,7 @@ public class Main {
                 }
                 else {
                     sum = sum + 1 + digit(cnt);
+                    cnt = 1;
                 }
                 bef = arr[now];
             }
