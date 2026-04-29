@@ -14,13 +14,15 @@ public class Main {
         while(chk) {
             chk = false;
             int fst = 0;
+            int len = 0;
             for(int i = 0; i < n; i++) {
                 if(arr[i] != 0) {
                     fst = i;
+                    len = 1;
                     break;
                 }
             }
-            int len = 1;
+
             for(int i = fst + 1; i < n; i++) {
                 if(arr[i] != 0) {
                     if(arr[i] == arr[fst]) {
