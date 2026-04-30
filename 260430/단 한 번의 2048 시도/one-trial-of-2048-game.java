@@ -43,10 +43,15 @@ public class Main {
 //                    System.out.printf("%d %d\n",nx,ny);
                     arr[x][y] = 0;
                     arr[bx][by] *= 2;
+                    bef = arr[x][y];
+                    bx = x;
+                    by = y;
                 }
-                bef = arr[x][y];
-                bx = x;
-                by = y;
+                else if(arr[x][y] != 0) {
+                    bef = arr[x][y];
+                    bx = x;
+                    by = y;
+                }
             }
         }
         for(int line = 0; line < 4; line++) {
