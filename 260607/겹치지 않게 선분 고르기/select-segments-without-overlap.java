@@ -17,7 +17,7 @@ public class Main {
         }
 
         Arrays.sort(pairs, (a, b) -> {
-            return a.y - b.y;
+            return a.x - b.x;
         });
         for(int i = 0; i < n; i++) {
             bt(pairs, i, 0, 0);
@@ -38,9 +38,8 @@ public class Main {
             if(x >= end) {
                 bt(pairs, now + 1, cnt + 1, y + 1);
             }
-            else {
-                bt(pairs, now + 1, cnt, end);
-            }
+            bt(pairs, now + 1, cnt, end);
+
         }
     }
     static class pair {
