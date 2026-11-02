@@ -10,19 +10,16 @@ public class Main {
         int n = sc.nextInt();
         int k = sc.nextInt();
         int[] arr = new int[n];
-
+        int[] sum = new int[n];
+        int bef = 0;
         for(int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
+            sum[i] = bef + arr[i];
+            bef = sum[i];
         }
-
-        for(int i = 0; i < k; i++) {
-            ans += arr[i];
-        }
-        int bef = ans;
-        for(int i = k; i < n; i++) {
-            int now = arr[i] - arr[i - k];
-            ans = Math.max(ans, bef + now);
-            bef += now;
+        ans = sum[k - 1];
+        for(int i = 0; i + k < n; i++) {
+            ans = Math.max(ans, sum[i+k] - sum[i]);
         }
 
         System.out.println(ans);
